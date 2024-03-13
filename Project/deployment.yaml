@@ -11,12 +11,16 @@ spec:
     metadata:
       labels:
         app: my-web-app
-    spec:
-      containers:
-      - name: nginx
-        image: nginx:alpine
-        ports:
-        - containerPort: 80
-        volumeMounts:
-        - name: web-content
-          mountPath: /usr/share/nginx/html
+spec:
+  containers:
+  - name: nginx
+    image: nginx:alpine
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: web-content
+      mountPath: /usr/share/nginx/html
+  volumes:
+  - name: web-content
+    configMap:
+      name: web-content-configmap
