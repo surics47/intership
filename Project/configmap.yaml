@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: web-content-configmap
+data:
+  index.html: |
+    <!-- Your index.html content -->
+  style.css: |
+    /* Your style.css content */
+  script.js: |
+    // Your script.js content
