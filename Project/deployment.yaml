@@ -7,20 +7,18 @@ spec:
   selector:
     matchLabels:
       app: my-web-app
+      tier: frontend
   template:
     metadata:
       labels:
         app: my-web-app
-spec:
-  containers:
-  - name: nginx
-    image: nginx:alpine
-    ports:
-    - containerPort: 80
-    volumeMounts:
-    - name: web-content
-      mountPath: /usr/share/nginx/html
-  volumes:
-  - name: web-content
-    configMap:
-      name: web-content-configmap
+        tier: frontend
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: web-content
+          mountPath: /usr/share/nginx/html
