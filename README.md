@@ -1,4 +1,4 @@
-                                                                    Documentation 
+Documentation 
 
 In this project, I deployed a simple web application using Minikube and managed its deployment with Argo CD. The web application, a "Hello World" example, was containerized using Docker and hosted on my GitHub repository (https://github.com/surics47/intership). The deployment was performed on an AWS t3.large EC2 instance.
 
@@ -11,14 +11,14 @@ Continuous Integration with GitHub: Leveraging GitHub, I set up continuous integ
 
  
 
-                                                               Challenges Encountered and Resolutions
+Challenges Encountered and Resolutions
 Network Connectivity Issues: Initially, I faced challenges with network connectivity between Minikube and the local machine. This was resolved by ensuring that Minikube was properly configured to communicate with the host machine. 
 Integration with Argo CD UI: Integrating Argo CD UI with Minikube required careful configuration and setup to establish connectivity and authentication. Through troubleshooting and documentation referencing, I successfully configured Argo CD UI to manage deployments on Minikube. 
 Port Forwarding Issues: Encountered issues with port conflicts while trying to access the Argo CD UI through port forwarding. Resolved by using a different port for port forwarding. 
 Connectivity to Kubernetes API Server: Argo CD server pod was unable to connect to the Kubernetes API server. Resolved by verifying network connectivity and ensuring correct RBAC permissions. 
  
 
-                                                                         Clean-Up Process 
+ Clean-Up Process 
 Delete Argo CD and Argo Rollouts: Uninstall Argo CD and Argo Rollouts from the Kubernetes cluster using the respective manifests or Helm charts. 
 Delete Application Deployments: Delete any application deployments managed by Argo CD or Argo Rollouts. 
 Remove Docker Images: Remove the Docker images pushed to the registry, if any. 
