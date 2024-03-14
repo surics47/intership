@@ -7,12 +7,10 @@ spec:
   selector:
     matchLabels:
       app: my-web-app
-      tier: frontend
   template:
     metadata:
       labels:
         app: my-web-app
-        tier: frontend
     spec:
       containers:
       - name: nginx
@@ -20,5 +18,9 @@ spec:
         ports:
         - containerPort: 80
         volumeMounts:
-        - name: web-content
+        - name: web-content  # Name of the volume to mount
           mountPath: /usr/share/nginx/html
+      volumes:
+      - name: web-content    # Name of the volume defined
+        configMap:
+          name: web-content-configmap  # Name of the ConfigMap containing your files
